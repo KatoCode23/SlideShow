@@ -10,6 +10,10 @@ const slideShowImages = [
 {image: 'space5.jpg'},
 ];
 
+
+const image =
+    <img className="showImage" src="http://scene7.zumiez.com/is/image/zumiez/pdp_hero/ATM-Lone-Spirit-8.25%26quot%3B--Skateboard-Deck-_231553-front.jpg" alt=""/>
+
 console.log(slideShowImages);
 
 
@@ -25,6 +29,6 @@ console.log(slideShowImages);
 
 
 ReactDOM.render(
-  <h1>Hello, World!</h1>,
+  image,
   document.getElementById('root')
 );
