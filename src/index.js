@@ -3,19 +3,57 @@ import ReactDOM from 'react-dom';
 import './styles/main.css';
 
 const slideShowImages = [
-{image: 'space1.jpg'},
-{image: 'space2.jpg'},
-{image: 'space3.jpg'},
-{image: 'space4.jpg'},
-{image: 'space5.jpg'},
+{image: require("./space1.jpg")},
+{image: require("./space2.jpg")},
+{image: require("./space3.jpg")},
+{image: require("./space4.jpg")},
+{image: require("./space5.jpg")},
 ];
 
 
-const image =
-    <img className="showImage" src="http://scene7.zumiez.com/is/image/zumiez/pdp_hero/ATM-Lone-Spirit-8.25%26quot%3B--Skateboard-Deck-_231553-front.jpg" alt=""/>
+//const image =
+//    <img className="showImage" src={require("./space5.jpg")} alt=""/>
 
-console.log(slideShowImages);
+//console.log(slideShowImages);
 
+class Slideshow extends React.Component {
+
+  getInitialState: ()=> {
+    return {
+      images: slideShowImages,
+      operator: "PLUS",
+      pointer: 0
+    }
+  },
+  render: ()=> {
+    const pointed_image = this.state.images[this.state.pointer];
+    console.log(pointed);
+    const image_style = {backgroundImage: 'url(' + pointed_image.image + ')'}
+    return (
+        <div style={image_style}>
+
+        </div>
+
+    )
+  },
+  componentDidMount: function () {
+    const self = this;
+      this.interval = setInterval(()=>{
+        const pointer = self.state.pointer,operator=this.state.operator;
+        if(pointer === self.state.images.length-1){
+          operator = "MINUS"
+        }
+        else if(pointer === 0){
+          operator === "PLUS"
+        }
+          operator === "PLUS"? pointer++:pointer--;
+          return self.setState({pointer:pointer,operator:operator})
+      },2000)
+  },
+  swithOperatot(operator) {
+    this.setState({operator:operator})
+  }
+};
 
 
 
@@ -29,6 +67,6 @@ console.log(slideShowImages);
 
 
 ReactDOM.render(
-  image,
+  <Slideshow />,
   document.getElementById('root')
 );

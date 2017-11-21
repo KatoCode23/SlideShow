@@ -8,9 +8,10 @@ body {
 .showImage{
   position: relative;
   display: block;
-  width: 300px;
-  height: 300px;
+  width: 500px;
+  height: 500px;
   text-align: center;
   background-size: contain;
   background-repeat: no-repeat;
+  margin: 0 auto;
 }
