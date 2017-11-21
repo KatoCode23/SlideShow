@@ -2,65 +2,51 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/main.css';
 
-const slideShowImages = [
-{image: require("./space1.jpg")},
-{image: require("./space2.jpg")},
-{image: require("./space3.jpg")},
-{image: require("./space4.jpg")},
-{image: require("./space5.jpg")},
+var slideShowImages = [
+{image: "./space1.jpg"},
+{image: "./space2.jpg"},
+{image: "./space3.jpg"},
+{image: "./space4.jpg"},
+{image: "./space5.jpg"},
 ];
 
+class Slideshow extends React.Component {
 
-//const image =
-//    <img className="showImage" src={require("./space5.jpg")} alt=""/>
+  constructor(props){
+    super(props);
+    this.state = {
+      imagePath: '',
+      clickNext: '',
+      clickBack: ''
+    };
 
-//console.log(slideShowImages);
-
-const Slideshow = React.createClass({
-  getInitialState: ()=> {
-    return {
-      images: slideShowImages,
-      operator: "PLUS",
-      pointer: 0
+    this.onChangeImagePath = this.onChangeImagePath.bind(this);
+    this.onChangeClickNext = this.onChangeClickNext.bind(this);
+    this.onChangeClickBack = this.onChangeClickBack.bind(this);
     }
-  },
-  render: ()=> {
-    const pointed_image = this.state.images[this.state.pointer];
-    console.log(pointed);
-    const image_style = {backgroundImage: 'url(' + pointed_image.image + ')'}
-    return (
-        <div style={image_style}>
 
-        </div>
+    onChangeImagePath(){
+      this.setState({imagePath: '<img className="showImage"> src="slideShowImages.image" alt="" />'});
+    }
 
-    )
-  },
-  componentDidMount: function () {
-    const self = this;
-      this.interval = setInterval(()=>{
-        const pointer = self.state.pointer,operator=this.state.operator;
-        if(pointer === self.state.images.length-1){
-          operator = "MINUS"
-        }
-        else if(pointer === 0){
-          operator === "PLUS"
-        }
-          operator === "PLUS" ? pointer++:pointer--;
-          return self.setState({pointer:pointer,operator:operator})
-      },2000)
-  },
-  swithOperatot(operator) {
-    this.setState({operator:operator})
+    onChangeClickNext(){
+       slideShowImages.map((image)=>image++);
+    }
+    onChangeClickBack(){
+      slideShowImages.map((image)=>image--);
+    }
+
+  render () {
+      return (
+      <div className="slide-container">
+           <img className="showImage" src={require("./space1.jpg")} alt="" />
+           <span className="next">NEXT</span>
+           <span className="previous">PREVIOUS</span>
+      </div>
+      );
   }
-});
 
-
-
-
-
-
-
-
+}
 
 
 
