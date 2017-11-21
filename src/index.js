@@ -16,8 +16,7 @@ const slideShowImages = [
 
 //console.log(slideShowImages);
 
-class Slideshow extends React.Component {
-
+const Slideshow = React.createClass({
   getInitialState: ()=> {
     return {
       images: slideShowImages,
@@ -46,14 +45,14 @@ class Slideshow extends React.Component {
         else if(pointer === 0){
           operator === "PLUS"
         }
-          operator === "PLUS"? pointer++:pointer--;
+          operator === "PLUS" ? pointer++:pointer--;
           return self.setState({pointer:pointer,operator:operator})
       },2000)
   },
   swithOperatot(operator) {
     this.setState({operator:operator})
   }
-};
+});
 
 
 
