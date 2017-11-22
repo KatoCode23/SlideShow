@@ -31,17 +31,19 @@ class Slideshow extends React.Component {
 
     onChangeClickNext(){
        slideShowImages.map((image)=>image++);
+       console.log('you clicked next...');
     }
-    onChangeClickBack(){
+   onChangeClickBack(){
       slideShowImages.map((image)=>image--);
+      console.log('you clicked previous...');
     }
 
   render () {
       return (
       <div className="slide-container">
            <img className="showImage" src={require("./space1.jpg")} alt="" />
-           <span className="next">NEXT</span>
-           <span className="previous">PREVIOUS</span>
+           <span onClick={this.onChangeClickNext()} className="next">NEXT</span>
+           <span onClick={this.onChangeClickBack()} className="previous">PREVIOUS</span>
       </div>
       );
   }
