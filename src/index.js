@@ -15,35 +15,27 @@ class Slideshow extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      imagePath: '',
+      imageIsOpen: true,
       clickNext: '',
-      clickBack: ''
+      clickPrevious: ''
     };
 
-    this.onChangeImagePath = this.onChangeImagePath.bind(this);
-    this.onChangeClickNext = this.onChangeClickNext.bind(this);
-    this.onChangeClickBack = this.onChangeClickBack.bind(this);
-    }
+    this.clickNext = this.clickNext.bind(this);
+    this.clickPrevious = this.clickPrevious.bind(this);
+}
 
-    onChangeImagePath(){
-      this.setState({imagePath: '<img className="showImage"> src="slideShowImages.image" alt="" />'});
-    }
-
-    onChangeClickNext(){
-       slideShowImages.map((image)=>image++);
+   clickNext(){
        console.log('you clicked next...');
     }
-   onChangeClickBack(){
-      slideShowImages.map((image)=>image--);
+   clickPrevious(){
       console.log('you clicked previous...');
     }
 
   render () {
       return (
       <div className="slide-container">
-           <img className="showImage" src={require("./space1.jpg")} alt="" />
-           <span onClick={this.onChangeClickNext()} className="next">NEXT</span>
-           <span onClick={this.onChangeClickBack()} className="previous">PREVIOUS</span>
+           <span onClick={this.clickNext} className="next">NEXT</span>
+           <span onClick={this.clickPrevious} className="previous">PREVIOUS</span>
       </div>
       );
   }
