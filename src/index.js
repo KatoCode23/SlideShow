@@ -14,36 +14,70 @@ class Slideshow extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = {
-      imageIsOpen: true,
-      clickNext: '',
-      clickPrevious: ''
-    };
-
     this.clickNext = this.clickNext.bind(this);
     this.clickPrevious = this.clickPrevious.bind(this);
-}
+    this.state =
+    {imageIsOpen: false}
+  };
 
    clickNext(){
-       console.log('you clicked next...');
+     this.setState({imageIsOpen: true});
+      console.log('you clicked next...');
     }
+
    clickPrevious(){
+     this.setState({imageIsOpen: true});
       console.log('you clicked previous...');
     }
 
   render () {
+    const imageIsOpen = this.state.imageIsOpen;
+    let next = null;
+    let previous = null;
+      if(imageIsOpen) {
+        next = <clickToNextImage onClick={this.clickNext} />;
+      }
+      if(imageIsOpen) {
+        previous = <clickToPreviousImage onClick={this.clickPrevious} />;
+      }
       return (
       <div className="slide-container">
-           <span onClick={this.clickNext} className="next">NEXT</span>
-           <span onClick={this.clickPrevious} className="previous">PREVIOUS</span>
+           <ImageIsOpen imageIsOpen={imageIsOpen} />
       </div>
       );
+    }
+
+
+  function nextPhoto(props){
+    console.log('click to the next image');
   }
 
+  function previousPhoto(props){
+    console.log('click to the previous image');
+  }
+
+  function ImageIsOpen(props) {
+    const imageIsOpen = props.imageIsOpen;
+     if(imageIsOpen) {
+       console.log('next');
+     }
+     if(imageIsOpen) {
+       console.log('previous');
+     }
+  }
+
+  function nextButton(props) {
+    return (
+      <button className="next" onClick={props.onClick}>next</button>
+    );
+  }
+
+  function previousButton(props) {
+    return (
+      <button className="previous" onClick={props.onClick}>previous</button>
+    );
+  }
 }
-
-
-
 
 ReactDOM.render(
   <Slideshow />,
