@@ -27,17 +27,17 @@ body {
 }
 
 .next{
-  position: absolute;
-  display: block;
-  right: 0;
-  top: 50%;
-  border: solid black 2px;
+  display: none;
 }
 
 .previous{
-  position: absolute;
-  display: block;
-  left: 0;
-  top: 50%;
-  border: solid black 2px;
+  display: none;
+}
+
+#next{
+
+}
+
+#prev{
+
 }
