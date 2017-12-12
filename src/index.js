@@ -26,9 +26,6 @@ class Slideshow extends React.Component {
      this.setState({
        currentPic: this.state.currentPic + 1
      })
-     if(this.state.currentPic >= this.numberOfImages){
-          document.getElementById('#next').style.display="none";
-     }
       console.log('you clicked next...' + this.state.currentPic);
     }
 
@@ -36,20 +33,34 @@ class Slideshow extends React.Component {
      this.setState({
        currentPic: this.state.currentPic -1
      })
-     if(this.state.currentPic <= 1){
-          document.getElementById('#prev').style.display="none";
-     }
       console.log('you clicked previous...' + this.state.currentPic);
   }
 
   render () {
+    let nextButton;
+      if(this.state.currentPic >= this.numberOfImages){
+        nextButton = null;
+        console.log(nextButton);
+      }else{
+        nextButton = <button className="next" onClick={this.clickNext}><i className="fa fa-chevron-right" aria-hidden="true"></i></button>
+      }
+
+    let prevButton;
+      if(this.state.currentPic <= 0){
+        prevButton = null;
+        console.log(prevButton);
+      }else{
+        prevButton = <button className="prev" onClick={this.clickPrevious}><i className="fa fa-chevron-left" aria-hidden="true"></i></button>
+      }
+
     const pic = require(`${slideShowImages[this.state.currentPic]}`);
 
       return (
       <div className="slide-container">
-          <button id="prev" onClick={this.clickPrevious}>Previous</button>
-          <img src={pic} width="200" alt="Some Name" />
-          <button id="next" onClick={this.clickNext}> Next</button>
+        <h1>Elin & Kalen</h1>
+          {prevButton}
+          <img className="slide-image" src={pic} alt="Some Name" />
+          {nextButton}
       </div>
       );
     }
