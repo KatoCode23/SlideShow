@@ -38,7 +38,7 @@ class Slideshow extends React.Component {
 
   render () {
     let nextButton = null;
-      if(this.state.currentPic >= 0 && this.state.currentPic < this.numberOfImages){
+      if(this.state.currentPic < this.numberOfImages){
         nextButton = <button className="next" onClick={this.clickNext}><i className="fa fa-chevron-right" aria-hidden="true"></i></button>
         console.log(nextButton);
       }
