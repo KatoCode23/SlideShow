@@ -53,7 +53,7 @@ class Slideshow extends React.Component {
 
       return (
       <div className="slide-container">
-        <h1>Elin & Kalen</h1>
+        <h1 className="title">Elin & Kalen</h1>
           {prevButton}
           <img className="slide-image" src={pic} alt="Some Name" />
           {nextButton}
