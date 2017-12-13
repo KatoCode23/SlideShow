@@ -20,6 +20,7 @@ class Slideshow extends React.Component {
       currentPic: 0
     }
     this.numberOfImages = 4;
+    this.timer = setInterval(this.clickNext, 4000);
   };
 
    clickNext(){
@@ -27,7 +28,7 @@ class Slideshow extends React.Component {
        currentPic: this.state.currentPic + 1
      })
       console.log('you clicked next...' + this.state.currentPic);
-    }
+  }
 
    clickPrevious(){
      this.setState({
@@ -41,15 +42,18 @@ class Slideshow extends React.Component {
       if(this.state.currentPic < this.numberOfImages){
         nextButton = <button className="next" onClick={this.clickNext}><i className="fa fa-chevron-right" aria-hidden="true"></i></button>
         console.log(nextButton);
-      }
+     }else if(this.state.currentPic === this.numberOfImages){
+        clearInterval(this.timer);
+     }
 
     let prevButton = null;
       if(this.state.currentPic > 0){
         prevButton = <button className="prev" onClick={this.clickPrevious}><i className="fa fa-chevron-left" aria-hidden="true"></i></button>;
         console.log(prevButton);
-      }
+     }
 
     const pic = require(`${slideShowImages[this.state.currentPic]}`);
+
 
       return (
       <div className="slide-container">
