@@ -37,20 +37,16 @@ class Slideshow extends React.Component {
   }
 
   render () {
-    let nextButton;
-      if(this.state.currentPic >= this.numberOfImages){
-        nextButton = null;
-        console.log(nextButton);
-      }else{
+    let nextButton = null;
+      if(this.state.currentPic >= 0 && this.state.currentPic < this.numberOfImages){
         nextButton = <button className="next" onClick={this.clickNext}><i className="fa fa-chevron-right" aria-hidden="true"></i></button>
+        console.log(nextButton);
       }
 
-    let prevButton;
-      if(this.state.currentPic <= 0){
-        prevButton = null;
+    let prevButton = null;
+      if(this.state.currentPic > 0){
+        prevButton = <button className="prev" onClick={this.clickPrevious}><i className="fa fa-chevron-left" aria-hidden="true"></i></button>;
         console.log(prevButton);
-      }else{
-        prevButton = <button className="prev" onClick={this.clickPrevious}><i className="fa fa-chevron-left" aria-hidden="true"></i></button>
       }
 
     const pic = require(`${slideShowImages[this.state.currentPic]}`);
