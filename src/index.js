@@ -17,18 +17,19 @@ class Slideshow extends React.Component {
     this.clickNext = this.clickNext.bind(this);
     this.clickPrevious = this.clickPrevious.bind(this);
     this.state = {
-      currentPic: 0
+      currentPic: 0,
+      timer: null
     }
     this.numberOfImages = 4;
-    this.timer = setInterval(this.clickNext, 4000);
   };
 
    clickNext(){
      this.setState({
-       currentPic: this.state.currentPic + 1
+       currentPic: this.state.currentPic + 1,
+       timer: this.state.timer = setInterval(this.clickNext,2000)
      })
-      console.log('you clicked next...' + this.state.currentPic);
-  }
+     console.log('you have clicked next... ' + this.state.currentPic);
+   }
 
    clickPrevious(){
      this.setState({
@@ -43,7 +44,7 @@ class Slideshow extends React.Component {
         nextButton = <button className="next" onClick={this.clickNext}><i className="fa fa-chevron-right" aria-hidden="true"></i></button>
         console.log(nextButton);
      }else if(this.state.currentPic === this.numberOfImages){
-        clearInterval(this.timer);
+        clearInterval(this.state.timer);
      }
 
     let prevButton = null;
