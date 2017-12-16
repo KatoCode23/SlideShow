@@ -5,12 +5,14 @@ body {
     margin: 40px;
     cursor: pointer;
     text-align: center;
+    font-family: 'Great Vibes', cursive;
 }
 
 .title{
   font-style: italic;
   color: grey;
-  font-size: 3rem;
+  font-size: 2.3rem;
+  font-weight: 100;
 }
 
 .slide-container{
@@ -20,17 +22,13 @@ body {
   height: 600px;
   text-align: center;
   margin: 0 auto;
-  background-color: rgba(128, 128, 128, 0.15);
-  border: solid rgba(128, 128, 128, 0) 2px;
-  box-shadow: 5px 10px 15px rgba(128, 128, 128, 0.15);
-  border-radius: 5%;
 }
 
 .slide-image{
   position: relative;
   display: block;
-  width: 300px;
-  height: 300px;
+  width: 340px;
+  height: 495px;
   text-align: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -65,22 +63,31 @@ body {
   font-size: 2rem;
 }
 
-@media  (min-width: 0px) and
+@media  (min-width: 415px) and
 		(max-width: 768px) {
+
+.slide-image {
+  width: 200px;
+  height: 250px;
+}
+}
+
+@media  (min-width: 0px) and
+		(max-width: 414px) {
+
+body{
+  margin: 5px;
+}
 
 .title{
   font-size: 2rem;
 }
 
-.slide-container{
-  width: 300px;
-  height: 400px;
-}
-
 .slide-image{
-  width: 250px;
+  width: 200px;
   height: 250px;
 }
+
 .fa-chevron-right{
   font-size: 1rem;
 }
