@@ -247,10 +247,27 @@ class Slideshow extends React.Component {
           {nextButton}
       </div>
       <div className="credits-container">
-        <p className="credit-text"><em>We woould like to thank everybody who was there to make this the best day of our lives!</em></p>
+        <p className="credit-text"><em>Special thanks to everyone for
+        joining Eleen and I in the best day of our lives!<br/>
+        Grandmothers and Grandchildren from Norway to California met in the middle,
+        New York, to enjoy the sushine on
+        a fall afternoon.<br/>Friends from far away places joined hands and exchanged
+        stories, finally placing faces to names.<br/>
+        The day is not the same without either of you in attendance. Awe,
+        remembrance.<br/> You all brought life! You came with your light
+        and lit the day and the night, with the fire of your hearts,
+        Eleen and I could not wish for
+        a better start. The sound of your voices to the play of the harp.<br/>
+        We would be selfish to ask for better,
+        how about that weather! Fall, and no need for
+        a sweater.<br/>The dance floor burned all the way through the reception.
+        Every moment a blessing.<br/>
+        Words will just not do, so here are some pictures for you.<br/>
+        <strong>Love,<br/>Eleen & Kalen</strong></em></p>
         <p className="credit-text"><strong>Hosts: </strong>Kara & Peter Georgiopoulos</p>
         <p className="credit-text"><strong>Parents of the Bride:</strong> Rita & Knut Halvorsen</p>
         <p className="credit-text"><strong>Parents of the Groom:</strong> Kimberlee & Kenneth Norton</p>
+        <p className="credit-text"><strong>Officiator:</strong> Scott Marengo</p>
         <p className="credit-text"><strong>Poems:</strong> Bente Glukstad<br/>Keely Marengo</p>
         <p className="credit-text"><strong>Maid of Honor:</strong> Beata Kanter</p>
         <p className="credit-text"><strong>Bridesmaids:</strong> Ina Halvorsen<br/>Ida Asle<br/>Jay Miriam<br/>Keara Norton<br/>Keylee Norton</p>
@@ -264,7 +281,7 @@ class Slideshow extends React.Component {
         <p className="credit-text"><strong>Hair:</strong><br/>Anthony Dickey<br/>Abiola Shabawale<br/>Jackie Challenger</p>
         <p className="credit-text"><strong>Speeches:</strong><br/>Peter Georgiopoulos<br/>Rita Halvorsen<br/>Kenneth Norton<br/>Beata Kanter<br/>John Vasconcellos<br/>Ina Halvorsen<br/>
         Eric Pringle<br/>Ida Asle<br/>Kevin Young<br/>Kalen Norton</p>
-        <p className="credit-text"><strong>Special Thanks To:</strong> Sandra Johnson<br/>Beth Brandino<br/>Dennis Danizette<br/>Marcia Danizette<br/>Douglas Gama<br/>Fatima Gama<br/>Katura Young<br/>Keely Marengo</p>
+        <p className="credit-text"><strong>Special Thanks To:</strong><br/>Sandra Johnson<br/>Beth Brandino<br/>Dennis Danizette<br/>Marcia Danizette<br/>Douglas Gama<br/>Fatima Gama<br/>Katura Young<br/>Keely Marengo</p>
        </div>
     </div>
       );
